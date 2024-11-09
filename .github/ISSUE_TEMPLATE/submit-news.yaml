@@ -1,0 +1,29 @@
+name: News Submission
+description: Submit a news appearance to update the website.
+title: "News Submission"
+body:
+  - type: input
+    id: link
+    attributes:
+      label: News appearance link
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: From which edition is it from?
+      multiple: false
+      options:
+        - XXVI
+        - XXV
+        - XXIV
+        - XXIII
+        - XXII
+        - XXI
+        - XX
+        - XIX
+        - XVIII
+    validations:
+      required: true
