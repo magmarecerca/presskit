@@ -65,19 +65,14 @@ async function getOgImage(url) {
 
 async function getFavicon(url) {
     try {
-        // Fetch the HTML content from the URL
-        const { data: html } = await axios.get(url);
-
-        // Load the HTML into cheerio
+        const {data: html} = await axios.get(url);
         const $ = cheerio.load(html);
 
-        // Find the icon link tag
         const faviconUrl =
             $('link[rel="icon"]').attr('href') ||
             $('link[rel="shortcut icon"]').attr('href') ||
-            '/favicon.ico'; // Default path if none is specified
+            '/favicon.ico';
 
-        // Resolve relative URLs to absolute ones
         return new URL(faviconUrl, url).href;
     } catch (error) {
         console.error('Error fetching the favicon:', error);
@@ -87,7 +82,7 @@ async function getFavicon(url) {
 
 function getExtensionFromUrl(url) {
     const extension = path.extname(new URL(url).pathname);
-    return extension || '.ico'; // Default to .ico if no extension is found
+    return extension || '.ico';
 }
 
 async function saveFavicon(data, outputDirectory) {
@@ -98,7 +93,7 @@ async function saveFavicon(data, outputDirectory) {
     }
 
     try {
-        const response = await axios.get(faviconUrl, { responseType: 'arraybuffer' });
+        const response = await axios.get(faviconUrl, {responseType: 'arraybuffer'});
 
         const extension = getExtensionFromUrl(faviconUrl);
         const filename = `${new URL(faviconUrl).hostname}${extension}`;
@@ -141,16 +136,10 @@ async function saveImages(data) {
 
 async function getTitleAndDescription(parsedData) {
     try {
-        // Fetch the HTML of the page
-        const { data } = await axios.get(parsedData.link);
-
-        // Load the HTML into cheerio
+        const {data} = await axios.get(parsedData.link);
         const $ = cheerio.load(data);
 
-        // Extract the title
         const title = $('title').text();
-
-        // Extract the meta description
         const description = $('meta[name="description"]').attr('content') || '';
 
         parsedData.title = title;
@@ -170,6 +159,7 @@ const main = async () => {
     await getTitleAndDescription(parsedData);
 
     const data = {
+        edition: parsedData.edition,
         title: parsedData.title,
         image: parsedData.image,
         description: parsedData.description,
@@ -179,7 +169,7 @@ const main = async () => {
 
     const filename = helper.hashUrlToFilename(data.link);
     const articleFilePath = path.join(__dirname, '..', '_news', `${filename}.md`);
-    const yamlContent = YAML.stringify(data, { lineWidth: 0 });
+    const yamlContent = YAML.stringify(data, {lineWidth: 0});
     const text = `---\n${yamlContent}---`;
     fs.writeFileSync(articleFilePath, text);
 };
