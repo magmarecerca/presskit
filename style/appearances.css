@@ -109,7 +109,8 @@ body > .content {
 }
 
 .news-appearance .link img {
-    height: 24px;
+    height: 16px;
+    margin-right: 5px;
 }
 
 @media screen and (max-width: 600px) {
