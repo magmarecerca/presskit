@@ -58,6 +58,12 @@ body > .content {
 }
 
 .news-appearance h3 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
