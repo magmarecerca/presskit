@@ -13,20 +13,19 @@ permalink: /appearances/
     <link rel="icon" type="image/png" href="images/icon.png">
 
     <link rel="stylesheet" href="/style/appearances.css"/>
+    <link rel="stylesheet" href="/style/appearances-card.css"/>
 
     <title>MAGMA, Associació per Promoure la Recerca Jove &ndash; News Appearances</title>
 </head>
 
 <body>
-<div class="banner" style='background-image: url("/images/news/headers/XXV.png")'></div>
+<div class="banner" style='background-image: url("/images/header.png")'></div>
 <div class="content">
     <h1>Exporecerca Jove Press Appearances</h1>
     <hr/>
-    <div class="appearances-list">
-        {% assign news = site.news | reverse %}
-        {% for new in news %}
-        {% include newsBox.html %}
-        {% endfor %}
+    <div class="cards">
+        {% include edition.html edition='XXV' logo='XXV.jpg' %}
+        {% include edition.html edition='XXIV' logo='XXIV.png' %}
     </div>
 </div>
 </body>
