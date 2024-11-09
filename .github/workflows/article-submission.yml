@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  create-pr:
+  add-article:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'submission')
 
@@ -44,3 +44,17 @@ jobs:
           git add .
           git commit -m "Add article submitted in #${{ github.event.issue.number }}"
           git push
+
+      - name: Close the Issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = context.issue.number;
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              state: 'closed'
+            });
