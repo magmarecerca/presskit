@@ -1,0 +1,118 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.content .player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    margin-bottom: 1rem
+}
+
+.content .player-wrapper .player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.content a {
+    color: #07d
+}
+
+.content a:hover {
+    color: #39f
+}
+
+.content.description img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem !important
+}
+
+.content hr {
+    height: 5px;
+    border-color: var(--color-offwhite3x);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.content h1, .content .h1, .content h2, .content .h2, .content h3, .content .h3 {
+    margin-top: .5rem;
+    margin-bottom: 1rem
+}
+
+.content h4, .content .h4 {
+    font-size: 23px
+}
+
+.content h4, .content .h4, .content h5, .content .h5, .content h6, .content .h6 {
+    margin-top: .5rem;
+    margin-bottom: 1rem
+}
+
+.content .side-nav a {
+    padding-left: 18px;
+    text-decoration: none
+}
+
+.content .side-nav a.item {
+    display: block;
+    margin-left: -18px;
+    width: calc(100% + 18px);
+    padding: 7px 7px 7px 18px;
+    border-radius: 1.5em;
+    color: var(--color-offblack);
+}
+
+.content .side-nav a.item:hover {
+    cursor: pointer;
+    background-color: var(--color-offwhite)
+}
+
+@media (max-width: 1200px) {
+    .content .side-nav {
+        text-align: center;
+        overflow-x: scroll !important;
+        overflow-y: hidden !important;
+        width: 100% !important;
+        padding-bottom: 20px !important;
+        white-space: nowrap;
+        position: relative
+    }
+
+    .content .side-nav a.item {
+        padding: 7px 18px;
+        display: inline-block;
+        position: relative !important;
+        font-weight: 500;
+        width: unset;
+        background-color: var(--color-offwhite);
+        margin-left: 2px;
+        margin-right: 2px;
+        border-radius: 2em
+    }
+
+    .content .side-nav a.item:hover {
+        background-color: var(--color-offwhite2x)
+    }
+}
+
+@media (max-width: 576px) {
+    .content h2, .content .h2 {
+        font-size: 1.5em !important
+    }
+}
+
+@media (max-width: 576px) {
+    .content .side-nav {
+        margin-left: -15px;
+        width: calc(100% + 30px) !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px !important;
+        padding-bottom: 20px !important
+    }
+}

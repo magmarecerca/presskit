@@ -1,0 +1,84 @@
+
+button.btn-twitter, a.btn-twitter, div.btn-twitter {
+    background-color: var(--color-twitter);
+    color: var(--color-white) !important
+}
+
+button.btn-twitter:hover, a.btn-twitter:hover, div.btn-twitter:hover {
+    background-color: var(--color-offblack);
+    color: var(--color-white)
+}
+
+button.btn-twitter-whitehover:hover, a.btn-twitter-whitehover:hover, div.btn-twitter-whitehover:hover {
+    background-color: var(--color-white) !important;
+    color: var(--color-twitter) !important
+}
+
+button.btn-instagram, a.btn-instagram {
+    background-color: #dd2476;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, background-image .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: var(--color-white) !important
+}
+
+button.btn-instagram:hover, a.btn-instagram:hover {
+    background-color: var(--color-offblack);
+    color: var(--color-white)
+}
+
+button.btn-tiktok, a.btn-tiktok {
+    background-color: var(--color-tiktok);
+    color: var(--color-white) !important
+}
+
+button.btn-tiktok:hover, a.btn-tiktok:hover {
+    background-color: var(--color-offblack);
+    color: var(--color-white) !important
+}
+
+button.btn-tiktok-hover {
+    background-image: linear-gradient(90deg, var(--color-offblack))
+}
+
+button.btn-tiktok-hover:hover {
+    --tiktok-gradient-stops: var(--color-tiktok-pink), var(--color-offblack), var(--color-offblack), var(--color-offblack), var(--color-offblack), var(--color-tiktok-cyan);
+    background-image: linear-gradient(90deg, var(--tiktok-gradient-stops));
+    background-color: var(--color-offblack) !important;
+    transition: background-image .2s ease-in-out !important;
+    color: #fff !important;
+    will-change: background-image !important
+}
+
+button.btn-youtube, a.btn-youtube {
+    background-color: var(--color-youtube);
+    color: var(--color-white) !important
+}
+
+button.btn-youtube:hover, a.btn-youtube:hover {
+    background-color: var(--color-offblack);
+    color: var(--color-white)
+}
+
+button.btn-facebook, a.btn-facebook {
+    background-color: var(--color-facebook);
+    color: var(--color-white) !important
+}
+
+button.btn-facebook:hover, a.btn-facebook:hover {
+    background-color: var(--color-offblack);
+    color: var(--color-white)
+}
+
+button.btn-linkedin, a.btn-linkedin {
+    background-color: var(--color-linkedin);
+    color: var(--color-white) !important
+}
+
+button.btn-linkedin:hover, a.btn-linkedin:hover {
+    background-color: var(--color-offblack);
+    color: var(--color-white)
+}
+
+button.btn-getstarted, a.btn-getstarted, button.btn-regular, a.btn-regular, div.btn-regular, button.btn-officialwebsite, a.btn-officialwebsite, div.btn-officialwebsite {
+    color: #fff !important;
+    background-color: var(--color-offblack)
+}

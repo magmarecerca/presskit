@@ -1,0 +1,33 @@
+---
+permalink: /appearances/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/png" href="images/icon.png">
+
+    <link rel="stylesheet" href="/style/appearances.css"/>
+
+    <title>MAGMA, Associació per Promoure la Recerca Jove &ndash; News Appearances</title>
+</head>
+
+<body>
+<div class="banner" style='background-image: url("/images/news/headers/XXV_Banner.png")'></div>
+<div class="content">
+    <h1>XXV Exporecerca Jove</h1>
+    <hr/>
+    <div class="appearances-list">
+        {% assign news = site.news | reverse %}
+        {% for new in news %}
+        {% include newsBox.html %}
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
