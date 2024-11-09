@@ -10,3 +10,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 collections:
   news:
     output: false
+  editions:
+    output: true
+    permalink: /appearances/:title

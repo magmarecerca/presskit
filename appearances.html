@@ -24,8 +24,10 @@ permalink: /appearances/
     <h1>Exporecerca Jove Press Appearances</h1>
     <hr/>
     <div class="cards">
-        {% include edition.html edition='XXV' logo='XXV.jpg' %}
-        {% include edition.html edition='XXIV' logo='XXIV.png' %}
+        {% assign editions = site.editions | reverse %}
+        {% for edition in editions %}
+            {% include edition.html edition=edition.edition logo=edition.logo %}
+        {% endfor %}
     </div>
 </div>
 </body>
