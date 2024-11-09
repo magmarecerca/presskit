@@ -15,7 +15,6 @@ body:
     id: link
     attributes:
       label: News appearance link
-      description: How can we get in touch with you if we need more info?
       placeholder: ex. https://magmarecerca.org
     validations:
       required: true
