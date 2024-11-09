@@ -1,6 +1,7 @@
 name: News Submission
 description: Submit a news appearance to update the website.
 title: "News Submission"
+labels: ["submission"]
 body:
   - type: input
     id: link
