@@ -1,9 +1,5 @@
----
-permalink: /appearances/
----
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang='{{ site.lang | default: "en-US" }}'>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,14 +14,16 @@ permalink: /appearances/
 </head>
 
 <body>
-<div class="banner" style='background-image: url("/images/news/headers/XXV.png")'></div>
+<div class="banner" style='background-image: url("/images/news/headers/{{ page.banner }}")'></div>
 <div class="content">
-    <h1>Exporecerca Jove Press Appearances</h1>
+    <h1>{{ page.edition }} Exporecerca Jove</h1>
     <hr/>
     <div class="appearances-list">
         {% assign news = site.news | reverse %}
         {% for new in news %}
-        {% include newsBox.html %}
+            {% if new.edition == page.edition %}
+                {% include newsBox.html %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>
