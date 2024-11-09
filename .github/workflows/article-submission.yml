@@ -45,16 +45,7 @@ jobs:
           git commit -m "Add article submitted in #${{ github.event.issue.number }}"
           git push
 
-      - name: Close the Issue
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const issue_number = context.issue.number;
-
-            await github.rest.issues.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              state: 'closed'
-            });
+      - name: Close Issue
+        run: gh issue close --comment "Article was successfully added" "${{ github.event.issue.number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
