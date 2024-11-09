@@ -4,6 +4,14 @@ title: "News Submission"
 labels: ["submission"]
 body:
   - type: input
+    id: publication_date
+    attributes:
+      label: "Publication date"
+      description: "Enter the publication date in the format YYYY-MM-DD"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+  - type: input
     id: link
     attributes:
       label: News appearance link

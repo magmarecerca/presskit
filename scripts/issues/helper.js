@@ -10,10 +10,12 @@ export function parseIssue(issueText) {
 
     const link = findValueAfterHeading("### News appearance link");
     const edition = findValueAfterHeading("### From which edition is it from?");
+    const publicationDate = findValueAfterHeading("### Publication date");
 
     return {
         link: link,
         edition: edition,
+        date: publicationDate,
     };
 
 }

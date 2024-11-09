@@ -168,7 +168,7 @@ const main = async () => {
     };
 
     const filename = helper.hashUrlToFilename(data.link);
-    const articleFilePath = path.join(__dirname, '..', '_news', `${filename}.md`);
+    const articleFilePath = path.join(__dirname, '..', '_news', `${parsedData.date}-${filename}.md`);
     const yamlContent = YAML.stringify(data, {lineWidth: 0});
     const text = `---\n${yamlContent}---`;
     fs.writeFileSync(articleFilePath, text);
