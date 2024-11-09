@@ -107,11 +107,12 @@ body > .content {
 }
 
 .news-appearance .image {
-    width: 350px;
+    width: 200px;
     height: 100%;
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
+    flex: none;
 }

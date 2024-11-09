@@ -11,5 +11,7 @@
             <p>{{ new.link }}</p>
         </div>
     </div>
+    {% if new.image %}
     <div class="image" style='background-image: url("/images/news/covers/{{new.image}}")'></div>
+    {% endif %}
 </a>
