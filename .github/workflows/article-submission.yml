@@ -46,6 +46,7 @@ jobs:
           git push
 
       - name: Close Issue
-        run: gh issue close --comment "Article was successfully added" "${{ github.event.issue.number }}"
+        run: gh issue close $ISSUE -c "Article was successfully added" -r "completed"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
