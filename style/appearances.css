@@ -4,6 +4,10 @@
     box-sizing: border-box
 }
 
+:root {
+    --image-width: 200px;
+}
+
 html {
     font-family: "Montserrat", serif;
     line-height: 1.15;
@@ -24,7 +28,9 @@ hr {
 body > .content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .banner {
@@ -39,12 +45,20 @@ body > .content {
     margin-bottom: 30px;
 }
 
+.appearances-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+    gap: 15px;
+}
+
 .news-appearance {
     color: black;
     text-decoration: none;
-    display: flex;
+    display: block;
     height: 150px;
-    margin-bottom: 15px;
+    max-width: 700px;
+    position: relative;
 
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.13);
@@ -58,9 +72,10 @@ body > .content {
 }
 
 .news-appearance .content {
-    padding: 16px;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    padding: 16px calc(var(--image-width) + 16px) 16px 16px;
 }
 
 .news-appearance h3 {
@@ -107,7 +122,6 @@ body > .content {
     margin: 0;
     font-size: 14px;
 }
-
 .news-appearance .link img {
     height: 16px;
     margin-right: 5px;
@@ -117,15 +131,27 @@ body > .content {
     .news-appearance > .image {
         display: none;
     }
+
+    :root {
+        --image-width: 0px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .appearances-list {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 .news-appearance .image {
-    width: 200px;
+    width: var(--image-width);
     height: 100%;
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     flex: none;
 }
