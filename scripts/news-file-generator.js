@@ -140,10 +140,11 @@ async function getTitleAndDescription(parsedData) {
         const $ = cheerio.load(data);
 
         const title = $('title').text();
-        const description = $('meta[name="description"]').attr('content') || '';
+        const ogDescription = $('meta[property="og:description"]').attr('content');
+        const description = $('meta[name="description"]').attr('content');
 
         parsedData.title = title;
-        parsedData.description = description;
+        parsedData.description = ogDescription || description || '';
     } catch (error) {
         console.error(`Error fetching data from ${parsedData.link}:`, error.message);
         return null;
