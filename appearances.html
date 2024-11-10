@@ -4,19 +4,22 @@ permalink: /appearances/
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="icon" type="image/png" href="/images/icon.png">
 
     <link rel="stylesheet" href="/style/appearances.css"/>
     <link rel="stylesheet" href="/style/global.css"/>
     <link rel="stylesheet" href="/style/appearances-card.css"/>
 
-    <title>MAGMA, Associació per Promoure la Recerca Jove &ndash; News Appearances</title>
+    <title>News Appearances | MAGMA, Associació per Promoure la Recerca Jove</title>
+    <meta name="description"
+          content="MAGMA, Associació per a Promoure la Recerca Jove is a Catalan non-profit organization."/>
+    <meta name="og:description"
+          content="MAGMA, Associació per a Promoure la Recerca Jove is a Catalan non-profit organization."/>
+    <meta name="og:image" content="https://press.magmarecerca.org/images/header.png"/>
 </head>
 
 <body>
@@ -28,7 +31,7 @@ permalink: /appearances/
     <div class="cards">
         {% assign editions = site.editions | reverse %}
         {% for edition in editions %}
-            {% include edition.html edition=edition.edition logo=edition.logo %}
+        {% include edition.html edition=edition.edition logo=edition.logo %}
         {% endfor %}
     </div>
 </div>
