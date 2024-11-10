@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, :after, :before {
+    box-sizing: border-box
+}
+
+html {
+    font-family: "Montserrat", serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent
+}
+
+body {
+    image-rendering: auto;
+    text-rendering: optimizeLegibility;
+    font-size: 18px;
+    overflow-x: hidden;
+
+    --color-offwhite: #f6f6f6;
+    --color-offwhite2x: #f0f0f0;
+    --color-offwhite3x: #e9ecef;
+    --color-offblack: #19192fff;
+    --color-white: white;
+    --color-youtube: #fd243a;
+    --color-twitter: #1DA1F2;
+    --color-facebook: #3b5998;
+    --color-linkedin: #0E76a8;
+    --color-tiktok: rgba(254, 44, 85, 1);
+    --color-tiktok-blue: #13bae4;
+    --color-tiktok-pink: #ee1d52;
+    --color-tiktok-cyan: #00F2EA;
+    --glow: 0px 0px 30px rgba(0, 0, 0, .1);
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #960000;
+    border-radius: 20px
+}
