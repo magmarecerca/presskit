@@ -12,4 +12,4 @@ collections:
     output: false
   editions:
     output: true
-    permalink: /appearances/:title
+    permalink: /appearances/:title/
