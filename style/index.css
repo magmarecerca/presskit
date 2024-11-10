@@ -49,6 +49,10 @@ hr {
     color: #07d !important;
 }
 
+.download-photos {
+    text-decoration: none;
+}
+
 .content {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -367,8 +371,7 @@ h6 {
     justify-content: center;
     position: relative;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 15px;
 }
 
 .branding-logo img {
