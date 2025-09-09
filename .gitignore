@@ -141,3 +141,5 @@ public/index.html
 public/images/cover
 public/images/screenshots
 scripts/developers.json
+
+.idea/

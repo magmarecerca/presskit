@@ -14,6 +14,29 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'submission')
 
     steps:
+      - name: Check if issue creator is org member
+        id: check_member
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const org = context.repo.owner;
+            const username = context.payload.issue.user.login;
+            try {
+              await github.rest.orgs.checkMembershipForUser({
+                org,
+                username
+              });
+              return true;
+            } catch (e) {
+              return false;
+            }
+        continue-on-error: true
+
+      - name: Fail if not org member
+        if: steps.check_member.outputs.result != 'true'
+        run: exit 1
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
