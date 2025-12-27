@@ -24,6 +24,7 @@ body:
       label: From which edition is it from?
       multiple: false
       options:
+        - XXVII
         - XXVI
         - XXV
         - XXIV
